@@ -2,77 +2,83 @@
     <main class="content">
 
         <div
-            v-if="bike===0" 
+            v-show="bike===0" 
             class="content__body"
             >
             <div class="content__head">
-                <img  @click="left" v-if="bike !== 0" class="content__head-left" src="../assets/img/arrow.svg" alt="">
+                <img  @click="left" v-if="bike !== 0" class="content__head-left" src="../assets/img/arrow.svg" alt="arrow">
                 <span class="content__head-speed">797</span>
-                <img src="../assets/img/1.png" alt="buggati">
-                <img @click="right"  class="content__head-right" src="../assets/img/arrow.svg" alt=""> 
+                <img 
+                    src="../assets/img/1.png" 
+                    alt="buggati"  
+                >
+                <img @click="right"  class="content__head-right" src="../assets/img/arrow.svg" alt="arrow"> 
             </div>
             <div class="content__values">
                 <span class="content__title">Displacement</span>
                 <span class="content__tetx">803 cc</span>
             </div>
             <div class="content__values">
-                <span class="content__title">Displacement</span>
-                <span class="content__tetx">803 cc</span>
+                <span class="content__title">Horse Power</span>
+                <span class="content__tetx">73 hp (54 kW)</span>
             </div>
             <div class="content__values">
-                <span class="content__title">Displacement</span>
-                <span class="content__tetx">803 cc</span>
+                <span class="content__title">Torque</span>
+                <span class="content__tetx">67 Nm (49.0 lb-ft)</span>
             </div>
             <div class="content__values">
-                <span class="content__title">Displacement</span>
-                <span class="content__tetx">803 cc</span>
+                <span class="content__title">Dry Weight</span>
+                <span class="content__tetx">175 Kg (386 lb)</span>
             </div>
             <div class="content__values">
-                <span class="content__title">Displacement</span>
-                <span class="content__tetx">803 cc</span>
+                <span class="content__title">Seat Height</span>
+                <span class="content__tetx">805 mm (31.69 in)</span>
             </div>
             <div class="content__values">
-                <span class="content__title">Displacement</span>
-                <span class="content__tetx">803 cc</span>
+                <span class="content__title">Safety</span>
+                <span class="content__tetx">ABS</span>
             </div>
             <div class="content__sign">
                 <span>Fresh vibes.</span>
                 <span>Sporty soul.</span>
             </div>
         </div>
-                <div
-            v-if="bike===1" 
+        <div
+            v-show="bike===1" 
             class="content__body"
             >
             <div class="content__head">
-                <img  @click="left" class="content__head-left" src="../assets/img/arrow.svg" alt="">
+                <img  @click="left" class="content__head-left" src="../assets/img/arrow.svg" alt="arrow">
                 <span class="content__head-speed">810</span>
-                <img src="../assets/img/2.png" alt="buggati">
-                <img @click="right"  class="content__head-right" src="../assets/img/arrow.svg" alt=""> 
+                <img 
+                    src="../assets/img/2.png" 
+                    alt="buggati"
+                >
+                <img @click="right"  class="content__head-right" src="../assets/img/arrow.svg" alt="arrow"> 
             </div>
             <div class="content__values">
                 <span class="content__title">Displacement</span>
-                <span class="content__tetx">803 cc</span>
+                <span class="content__tetx">821 cc</span>
             </div>
             <div class="content__values">
-                <span class="content__title">Displacement</span>
-                <span class="content__tetx">803 cc</span>
+                <span class="content__title">Horse Power</span>
+                <span class="content__tetx">109 hp (80 kW)</span>
             </div>
             <div class="content__values">
-                <span class="content__title">Displacement</span>
-                <span class="content__tetx">803 cc</span>
+                <span class="content__title">Torque</span>
+                <span class="content__tetx">86 Nm (63 lb-ft)</span>
             </div>
             <div class="content__values">
-                <span class="content__title">Displacement</span>
-                <span class="content__tetx">803 cc</span>
+                <span class="content__title">Dry Weight</span>
+                <span class="content__tetx">180.5 Kg (398 lb)</span>
             </div>
             <div class="content__values">
-                <span class="content__title">Displacement</span>
-                <span class="content__tetx">803 cc</span>
+                <span class="content__title">Seat Height</span>
+                <span class="content__tetx">805 mm (31.69 in)</span>
             </div>
             <div class="content__values">
-                <span class="content__title">Displacement</span>
-                <span class="content__tetx">803 cc</span>
+                <span class="content__title">Safety</span>
+                <span class="content__tetx">ABS</span>
             </div>
             <div class="content__sign">
                 <span>Fresh vibes.</span>
@@ -80,38 +86,38 @@
             </div>
         </div>
                 <div
-            v-if="bike===2" 
+            v-show="bike===2" 
             class="content__body"
             >
             <div class="content__head">
-                <img  @click="left"  class="content__head-left" src="../assets/img/arrow.svg" alt="">
+                <img  @click="left"  class="content__head-left" src="../assets/img/arrow.svg" alt="arrow">
                 <span class="content__head-speed">832</span>
                 <img src="../assets/img/3.png" alt="buggati">
-                <img @click="right" v-if=" bike !==2" class="content__head-right" src="../assets/img/arrow.svg" alt=""> 
+                <img @click="right" v-if=" bike !==2" class="content__head-right" src="../assets/img/arrow.svg" alt="arrow"> 
             </div>
             <div class="content__values">
                 <span class="content__title">Displacement</span>
                 <span class="content__tetx">803 cc</span>
             </div>
             <div class="content__values">
-                <span class="content__title">Displacement</span>
-                <span class="content__tetx">803 cc</span>
+                <span class="content__title">Horse Power</span>
+                <span class="content__tetx">73 hp (54 kW)</span>
             </div>
             <div class="content__values">
-                <span class="content__title">Displacement</span>
-                <span class="content__tetx">803 cc</span>
+                <span class="content__title">Torque</span>
+                <span class="content__tetx">67 Nm (49.0 lb-ft)</span>
             </div>
             <div class="content__values">
-                <span class="content__title">Displacement</span>
-                <span class="content__tetx">803 cc</span>
+                <span class="content__title">Dry Weight</span>
+                <span class="content__tetx">175 Kg (386 lb)</span>
             </div>
             <div class="content__values">
-                <span class="content__title">Displacement</span>
-                <span class="content__tetx">803 cc</span>
+                <span class="content__title">Seat Height</span>
+                <span class="content__tetx">805 mm (31.69 in)</span>
             </div>
             <div class="content__values">
-                <span class="content__title">Displacement</span>
-                <span class="content__tetx">803 cc</span>
+                <span class="content__title">Safety</span>
+                <span class="content__tetx">ABS</span>
             </div>
             <div class="content__sign">
                 <span>Fresh vibes.</span>
@@ -166,6 +172,7 @@
             top: 40%;
             left: 10%;
             cursor: pointer;
+            z-index: 15;
         }
         &__head-right{
             position: absolute;
@@ -173,6 +180,7 @@
             right: 15%;
             transform: rotate(180deg);
             cursor: pointer;
+            z-index: 15;
         }
         &__body{
             width: 96%;
@@ -197,8 +205,10 @@
             font-weight: 700;
         }
         &__sign{
+            font-family: 'Italianno', cursive;
+            font-size: 50px;
             border: 1px solid blue;
-            width: 500px;
+            width: 224px;
             position: absolute;
             right: 80px;
             bottom: 65px;
@@ -212,4 +222,5 @@
             }
         }
     }
+
 </style>

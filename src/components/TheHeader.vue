@@ -49,7 +49,7 @@
         }
         &__logo{
             width: 33%;
-            padding-top: 60px;
+            padding-top: 10px;
             border: 1px solid blue;
             display: flex;
             flex-direction: column;
