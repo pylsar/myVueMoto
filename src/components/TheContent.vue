@@ -8,10 +8,12 @@
             <div class="content__head">
                 <img  @click="left" v-if="bike !== 0" class="content__head-left" src="../assets/img/arrow.svg" alt="arrow">
                 <span class="content__head-speed">797</span>
-                <img 
-                    src="../assets/img/1.png" 
-                    alt="buggati"  
-                >
+                <div class="content__head-moto"> 
+                    <img 
+                        src="../assets/img/1.png" 
+                        alt="buggati"  
+                    >
+                </div>
                 <img @click="right"  class="content__head-right" src="../assets/img/arrow.svg" alt="arrow"> 
             </div>
             <div class="content__values">
@@ -50,10 +52,12 @@
             <div class="content__head">
                 <img  @click="left" class="content__head-left" src="../assets/img/arrow.svg" alt="arrow">
                 <span class="content__head-speed">810</span>
-                <img 
-                    src="../assets/img/2.png" 
-                    alt="buggati"
-                >
+                <div class="content__head-moto"> 
+                    <img 
+                        src="../assets/img/2.png" 
+                        alt="buggati"
+                    >
+                </div>    
                 <img @click="right"  class="content__head-right" src="../assets/img/arrow.svg" alt="arrow"> 
             </div>
             <div class="content__values">
@@ -92,7 +96,12 @@
             <div class="content__head">
                 <img  @click="left"  class="content__head-left" src="../assets/img/arrow.svg" alt="arrow">
                 <span class="content__head-speed">832</span>
-                <img src="../assets/img/3.png" alt="buggati">
+                <div class="content__head-moto">
+                    <img 
+                        src="../assets/img/3.png" 
+                        alt="buggati"
+                    >
+                </div>
                 <img @click="right" v-if=" bike !==2" class="content__head-right" src="../assets/img/arrow.svg" alt="arrow"> 
             </div>
             <div class="content__values">
@@ -162,22 +171,28 @@
             font-size: 100px;
             font-weight: bold;
             position: absolute;
-            top: 24%;
+            top: 9%;
             left: 45%;
             transform: translateX(-50%);
             z-index: -1;
         }
+        &__head-moto{
+            max-width: 900px;
+            & img{
+                width: 100%;
+            }
+        }
         &__head-left{
             position: absolute;
             top: 40%;
-            left: 10%;
+            left: 5%;
             cursor: pointer;
             z-index: 15;
         }
         &__head-right{
             position: absolute;
             top: 40%;
-            right: 15%;
+            right: 5%;
             transform: rotate(180deg);
             cursor: pointer;
             z-index: 15;
@@ -207,7 +222,7 @@
         &__sign{
             font-family: 'Italianno', cursive;
             font-size: 50px;
-            border: 1px solid blue;
+            line-height: 1;
             width: 224px;
             position: absolute;
             right: 80px;

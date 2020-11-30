@@ -40,7 +40,6 @@
     .header{
         width: 90%;
         margin: 0 auto;
-        border: 1px solid red;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -55,7 +54,7 @@
             flex-direction: column;
             align-items: center;
             & svg:first-child{
-                padding-bottom: 45px;
+                padding-bottom: 10px;
             }
         }
         &__navigation{
