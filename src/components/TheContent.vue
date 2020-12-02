@@ -1,139 +1,48 @@
 <template>
     <main class="content">
-
-        <div
-            v-show="bike===0" 
-            class="content__body"
+    <img  @click="left()" class="content__arrow-left" src="../assets/img/arrow.svg" alt="arrow">
+        <div class="wrapper" :style="{'margin-left' : '-' + (100 * currentDucati) + '%'}" >
+            <div 
+                v-for="(ducati, index) in ducaties" :key="index"
+                class="content__body"
             >
-            <div class="content__head">
-                <img  @click="left" v-if="bike !== 0" class="content__head-left" src="../assets/img/arrow.svg" alt="arrow">
-                <span class="content__head-speed">797</span>
-                <div class="content__head-moto"> 
-                    <img 
-                        src="../assets/img/1.png" 
-                        alt="buggati"  
-                    >
+                <div class="content__head">
+                    <span class="content__head-speed">{{ducati.speed}}</span>
+                    <div class="content__head-moto"> 
+                    <img :src=" require('../assets/img/' + ducati.src)" alt="ducati">
+                    </div>
                 </div>
-                <img @click="right"  class="content__head-right" src="../assets/img/arrow.svg" alt="arrow"> 
-            </div>
-            <div class="content__values">
-                <span class="content__title">Displacement</span>
-                <span class="content__tetx">803 cc</span>
-            </div>
-            <div class="content__values">
-                <span class="content__title">Horse Power</span>
-                <span class="content__tetx">73 hp (54 kW)</span>
-            </div>
-            <div class="content__values">
-                <span class="content__title">Torque</span>
-                <span class="content__tetx">67 Nm (49.0 lb-ft)</span>
-            </div>
-            <div class="content__values">
-                <span class="content__title">Dry Weight</span>
-                <span class="content__tetx">175 Kg (386 lb)</span>
-            </div>
-            <div class="content__values">
-                <span class="content__title">Seat Height</span>
-                <span class="content__tetx">805 mm (31.69 in)</span>
-            </div>
-            <div class="content__values">
-                <span class="content__title">Safety</span>
-                <span class="content__tetx">ABS</span>
-            </div>
-            <div class="content__sign">
-                <span>Fresh vibes.</span>
-                <span>Sporty soul.</span>
-            </div>
-        </div>
-        <div
-            v-show="bike===1" 
-            class="content__body"
-            >
-            <div class="content__head">
-                <img  @click="left" class="content__head-left" src="../assets/img/arrow.svg" alt="arrow">
-                <span class="content__head-speed">810</span>
-                <div class="content__head-moto"> 
-                    <img 
-                        src="../assets/img/2.png" 
-                        alt="buggati"
-                    >
-                </div>    
-                <img @click="right"  class="content__head-right" src="../assets/img/arrow.svg" alt="arrow"> 
-            </div>
-            <div class="content__values">
-                <span class="content__title">Displacement</span>
-                <span class="content__tetx">821 cc</span>
-            </div>
-            <div class="content__values">
-                <span class="content__title">Horse Power</span>
-                <span class="content__tetx">109 hp (80 kW)</span>
-            </div>
-            <div class="content__values">
-                <span class="content__title">Torque</span>
-                <span class="content__tetx">86 Nm (63 lb-ft)</span>
-            </div>
-            <div class="content__values">
-                <span class="content__title">Dry Weight</span>
-                <span class="content__tetx">180.5 Kg (398 lb)</span>
-            </div>
-            <div class="content__values">
-                <span class="content__title">Seat Height</span>
-                <span class="content__tetx">805 mm (31.69 in)</span>
-            </div>
-            <div class="content__values">
-                <span class="content__title">Safety</span>
-                <span class="content__tetx">ABS</span>
-            </div>
-            <div class="content__sign">
-                <span>Fresh vibes.</span>
-                <span>Sporty soul.</span>
-            </div>
-        </div>
-                <div
-            v-show="bike===2" 
-            class="content__body"
-            >
-            <div class="content__head">
-                <img  @click="left"  class="content__head-left" src="../assets/img/arrow.svg" alt="arrow">
-                <span class="content__head-speed">832</span>
-                <div class="content__head-moto">
-                    <img 
-                        src="../assets/img/3.png" 
-                        alt="buggati"
-                    >
+                <div class="content__values">
+                    <span class="content__title">Displacement</span>
+                    <span class="content__tetx">{{ducati.displacement}}</span>
                 </div>
-                <img @click="right" v-if=" bike !==2" class="content__head-right" src="../assets/img/arrow.svg" alt="arrow"> 
-            </div>
-            <div class="content__values">
-                <span class="content__title">Displacement</span>
-                <span class="content__tetx">803 cc</span>
-            </div>
-            <div class="content__values">
-                <span class="content__title">Horse Power</span>
-                <span class="content__tetx">73 hp (54 kW)</span>
-            </div>
-            <div class="content__values">
-                <span class="content__title">Torque</span>
-                <span class="content__tetx">67 Nm (49.0 lb-ft)</span>
-            </div>
-            <div class="content__values">
-                <span class="content__title">Dry Weight</span>
-                <span class="content__tetx">175 Kg (386 lb)</span>
-            </div>
-            <div class="content__values">
-                <span class="content__title">Seat Height</span>
-                <span class="content__tetx">805 mm (31.69 in)</span>
-            </div>
-            <div class="content__values">
-                <span class="content__title">Safety</span>
-                <span class="content__tetx">ABS</span>
-            </div>
-            <div class="content__sign">
-                <span>Fresh vibes.</span>
-                <span>Sporty soul.</span>
+                <div class="content__values">
+                    <span class="content__title">Horse Power</span>
+                    <span class="content__tetx">{{ducati.horsePower}}</span>
+                </div>
+                <div class="content__values">
+                    <span class="content__title">Torque</span>
+                    <span class="content__tetx">{{ducati.torque}}</span>
+                </div>
+                <div class="content__values">
+                    <span class="content__title">Dry Weight</span>
+                    <span class="content__tetx">{{ducati.dryWeight}}</span>
+                </div>
+                <div class="content__values">
+                    <span class="content__title">Seat Height</span>
+                    <span class="content__tetx">{{ducati.seatHeight}}</span>
+                </div>
+                <div class="content__values">
+                    <span class="content__title">Safety</span>
+                    <span class="content__tetx">{{ducati.safety}}</span>
+                </div>
+                <div class="content__sign">
+                    <span>Fresh vibes.</span>
+                    <span>Sporty soul.</span>
+                </div>
             </div>
         </div>
-
+        <img @click="right()"  class="content__arrow-right" src="../assets/img/arrow.svg" alt="arrow"> 
     </main>
 </template>
 
@@ -142,28 +51,83 @@
         name: 'TheContent',
         data(){
             return{
-                bike: 0,
+                currentDucati: 0,
+                ducaties:[
+                    {
+                        'displacement': '803 cc,',
+                        'horsePower': '73 hp (54 kW)',
+                        'torque': '67 Nm (49.0 lb-ft)',
+                        'dryWeight': '175 Kg (386 lb)',
+                        'seatHeight': '805 mm (31.69 in)',
+                        'safety': 'ABS',
+                        'src': '1.png',
+                        'speed': '797'
+                    },
+                    {
+                        'displacement': '800 cc,',
+                        'horsePower': '68 hp (51 kW)',
+                        'torque': '70 Nm (50.0 lb-ft)',
+                        'dryWeight': '185 Kg (386 lb)',
+                        'seatHeight': '803 mm (31.00 in)',
+                        'safety': 'ABS',
+                        'src': '2.png',
+                        'speed': '810'
+                    },
+                    {
+                        'displacement': '821 cc,',
+                        'horsePower': '77 hp (56 kW)',
+                        'torque': '73 Nm (51.0 lb-ft)',
+                        'dryWeight': '170 Kg (380 lb)',
+                        'seatHeight': '801 mm (31.22 in)',
+                        'safety': 'ABS',
+                        'src': '3.png',
+                        'speed': '805'
+                    }
+                ]
             }
         },
         methods:{
             left(){
-                this.bike = this.bike - 1;
+                if (this.currentDucati <= 0) {
+                    this.currentDucati = this.ducaties.length - 1;
+                }else{
+                this.currentDucati--;
+                }
             },
             right(){
-                this.bike = this.bike + 1;
+                if (this.currentDucati >= this.ducaties.length - 1) {
+                    this.currentDucati = 0;
+                } else {
+                    this.currentDucati++;
+                }
             }
         }
     }
 </script>  
 
 <style lang="scss">
+    .wrapper{
+        width: 100%;
+        display: flex;
+        height: 80vh;
+    }
     .content{
         position: relative;
+        height: 80vh;
+        overflow-x: hidden;
+
+        &__body{
+            min-width: 100%;
+            background: #fff;
+            border-radius: 50px;
+            margin-top: auto;
+            padding: 44px 80px 65px 80px;
+        }
         &__head{
             position: absolute;
-            top: -20%;
+            top: 0;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translateX(-50%);
             z-index: 10;
         }
         &__head-speed{
@@ -182,28 +146,22 @@
                 width: 100%;
             }
         }
-        &__head-left{
+        &__arrow-left{
             position: absolute;
-            top: 40%;
+            top: 0%;
             left: 5%;
             cursor: pointer;
             z-index: 15;
+            
         }
-        &__head-right{
+        &__arrow-right{
             position: absolute;
-            top: 40%;
+            top: 0%;
             right: 5%;
             transform: rotate(180deg);
             cursor: pointer;
             z-index: 15;
-        }
-        &__body{
-            width: 96%;
-            margin: 0 auto;
-            background: #fff;
-            border-radius: 50px;
-            margin-top: auto;
-            padding: 44px 80px 65px 80px;
+            
         }
         &__values{
             display: flex;
