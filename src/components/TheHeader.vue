@@ -1,7 +1,7 @@
 <template>
     <header class="header">
         <div class="header__burger">
-            <button>123</button>
+            <burger-menu />
         </div>
         <div class="header__logo">
             <svg width="110" height="117" viewBox="0 0 110 117" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -32,13 +32,18 @@
     </header>
 </template>
 <script>
+import BurgerMenu from '@/components/BurgerMenu.vue';
     export default {
-        name: 'TheHeader'
+        name: 'TheHeader',
+        components:{
+            BurgerMenu
+        } 
     }
 </script>  
 <style lang="scss">
     .header{
         width: 90%;
+        height: 20vh;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
@@ -49,7 +54,6 @@
         &__logo{
             width: 33%;
             padding-top: 10px;
-            border: 1px solid blue;
             display: flex;
             flex-direction: column;
             align-items: center;

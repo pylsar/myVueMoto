@@ -47,6 +47,7 @@
 </template>
 
 <script>
+import { TimelineMax } from "gsap";
     export default{
         name: 'TheContent',
         data(){
@@ -64,7 +65,7 @@
                         'speed': '797'
                     },
                     {
-                        'displacement': '800 cc,',
+                        'displacement': '800 cc',
                         'horsePower': '68 hp (51 kW)',
                         'torque': '70 Nm (50.0 lb-ft)',
                         'dryWeight': '185 Kg (386 lb)',
@@ -74,7 +75,7 @@
                         'speed': '810'
                     },
                     {
-                        'displacement': '821 cc,',
+                        'displacement': '821 cc',
                         'horsePower': '77 hp (56 kW)',
                         'torque': '73 Nm (51.0 lb-ft)',
                         'dryWeight': '170 Kg (380 lb)',
@@ -101,6 +102,12 @@
                     this.currentDucati++;
                 }
             }
+        },
+        mounted(){
+            let tl = new TimelineMax();
+            tl
+                .fromTo(".content__head-moto", 2, { x: -20000 }, { x: 0 }, "-=0.7")
+                .fromTo(".content__head-speed", 1, { y: -500}, {y: 0}, "-=0.5" );
         }
     }
 </script>  
