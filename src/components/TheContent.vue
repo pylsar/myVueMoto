@@ -14,27 +14,27 @@
                 </div>
                 <div class="content__values">
                     <span class="content__title">Displacement</span>
-                    <span class="content__tetx">{{ducati.displacement}}</span>
+                    <span class="content__text">{{ducati.displacement}}</span>
                 </div>
                 <div class="content__values">
                     <span class="content__title">Horse Power</span>
-                    <span class="content__tetx">{{ducati.horsePower}}</span>
+                    <span class="content__text">{{ducati.horsePower}}</span>
                 </div>
                 <div class="content__values">
                     <span class="content__title">Torque</span>
-                    <span class="content__tetx">{{ducati.torque}}</span>
+                    <span class="content__text">{{ducati.torque}}</span>
                 </div>
                 <div class="content__values">
                     <span class="content__title">Dry Weight</span>
-                    <span class="content__tetx">{{ducati.dryWeight}}</span>
+                    <span class="content__text">{{ducati.dryWeight}}</span>
                 </div>
                 <div class="content__values">
                     <span class="content__title">Seat Height</span>
-                    <span class="content__tetx">{{ducati.seatHeight}}</span>
+                    <span class="content__text">{{ducati.seatHeight}}</span>
                 </div>
                 <div class="content__values">
                     <span class="content__title">Safety</span>
-                    <span class="content__tetx">{{ducati.safety}}</span>
+                    <span class="content__text">{{ducati.safety}}</span>
                 </div>
                 <div class="content__sign">
                     <span>Fresh vibes.</span>
@@ -54,7 +54,7 @@
                 currentDucati: 0,
                 ducaties:[
                     {
-                        'displacement': '803 cc,',
+                        'displacement': '803 cc',
                         'horsePower': '73 hp (54 kW)',
                         'torque': '67 Nm (49.0 lb-ft)',
                         'dryWeight': '175 Kg (386 lb)',
@@ -112,11 +112,11 @@
         height: 80vh;
     }
     .content{
-        position: relative;
         height: 80vh;
         overflow-x: hidden;
 
         &__body{
+            position: relative;
             min-width: 100%;
             background: #fff;
             border-radius: 50px;
@@ -125,7 +125,7 @@
         }
         &__head{
             position: absolute;
-            top: 0;
+            top: -50%;
             left: 50%;
             transform: translateX(-50%);
             z-index: 10;
@@ -148,16 +148,16 @@
         }
         &__arrow-left{
             position: absolute;
-            top: 0%;
-            left: 5%;
+            top: 30%;
+            left: 25%;
             cursor: pointer;
             z-index: 15;
             
         }
         &__arrow-right{
             position: absolute;
-            top: 0%;
-            right: 5%;
+            top: 30%;
+            right: 25%;
             transform: rotate(180deg);
             cursor: pointer;
             z-index: 15;
@@ -173,9 +173,10 @@
             color: #181818;
         }
         &__text{
-            font-size: 24px;
+            font-size: 16px;
             color: #181818;
             font-weight: 700;
+            text-shadow: 1px 1px gray;
         }
         &__sign{
             font-family: 'Italianno', cursive;
