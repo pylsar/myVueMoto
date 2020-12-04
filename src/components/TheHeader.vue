@@ -26,7 +26,7 @@
         <nav class="header__navigation">
             <ul class="header__navigation-list">
                 <li><a href="#">INTERNATIONAL WEBSITE</a></li>
-                <li><a href="#">MY DUCATI</a></li>
+                <li><a href="https://github.com/pylsar/myVueMoto" rel="nofollow" target="_blank">CODE HERE</a></li>
             </ul>
         </nav>
     </header>
@@ -42,7 +42,7 @@ import BurgerMenu from '@/components/BurgerMenu.vue';
 </script>  
 <style lang="scss">
     .header{
-        width: 90%;
+        width: 100%;
         height: 20vh;
         margin: 0 auto;
         display: flex;
@@ -50,9 +50,11 @@ import BurgerMenu from '@/components/BurgerMenu.vue';
         align-items: center;
         &__burger{
             width: 33%;
+            padding-left: 20px;
         }
         &__logo{
             width: 33%;
+            max-height: 20vh;
             padding-top: 10px;
             display: flex;
             flex-direction: column;
@@ -63,6 +65,7 @@ import BurgerMenu from '@/components/BurgerMenu.vue';
         }
         &__navigation{
             width: 33%;
+            padding-right: 20px;
         }
         &__navigation-list{
             width: 100%;
