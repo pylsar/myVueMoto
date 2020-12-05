@@ -1,6 +1,8 @@
 <template>
     <main class="content">
-    <img  @click="left()" class="content__arrow-left" src="../assets/img/arrow.svg" alt="arrow">
+        <div class="content__arrow-left">
+            <img  @click="left()"  src="../assets/img/arrow.svg" alt="arrow">
+        </div>
         <div class="wrapper" :style="{'margin-left' : '-' + (100 * currentDucati) + '%'}" >
             <div 
                 v-for="(ducati, index) in ducaties" :key="index"
@@ -9,7 +11,7 @@
                 <div class="content__head">
                     <span class="content__head-speed">{{ducati.speed}}</span>
                     <div class="content__head-moto"> 
-                    <img :src=" require('../assets/img/' + ducati.src)" alt="ducati">
+                        <img :src=" require('../assets/img/' + ducati.src)" alt="ducati">
                     </div>
                 </div>
                 <div class="content__values">
@@ -42,7 +44,9 @@
                 </div>
             </div>
         </div>
-        <img @click="right()"  class="content__arrow-right" src="../assets/img/arrow.svg" alt="arrow"> 
+        <div class="content__arrow-right">
+            <img @click="right()" src="../assets/img/arrow.svg" alt="arrow"> 
+        </div>
     </main>
 </template>
 
@@ -149,25 +153,34 @@ import { TimelineMax } from "gsap";
         }
         &__head-moto{
             max-width: 900px;
+            min-width: 500px;
             & img{
                 width: 100%;
             }
         }
         &__arrow-left{
             position: absolute;
-            top: 30%;
+            top: 36%;
             left: 25%;
             cursor: pointer;
             z-index: 15;
+            & img{
+                width: 100%;
+                height: 100%;
+            }
             
         }
         &__arrow-right{
             position: absolute;
-            top: 30%;
+            top: 36%;
             right: 25%;
             transform: rotate(180deg);
             cursor: pointer;
             z-index: 15;
+            & img{
+                width: 100%;
+                height: 100%;
+            }
             
         }
         &__values{
@@ -200,6 +213,59 @@ import { TimelineMax } from "gsap";
             & span:last-child{
                 text-align: right;
                 display: block;
+            }
+        }
+    }
+
+    /*ADAPTIVE*/
+    @media screen and (max-width: 768px) {
+        .content{
+            &__arrow-left{
+                width: 50px;
+                height: 50px;  
+                left: 10%;              
+            }
+            &__arrow-right{
+                width: 50px;
+                height: 50px;
+                right: 10%;
+            }
+        }
+    }	
+
+    @media screen and (max-width: 672px) {
+        .content{
+            &__body{
+                padding: 65px 80px 44px 80px;
+            }
+            &__head{
+                top: -60%;
+            }
+        }
+    }
+    @media screen and (max-width: 550px) {
+        .content{
+            &__sign{
+                display: none;
+            }
+            &__arrow-left{
+                left: 5%;              
+            }
+            &__arrow-right{
+                right: 5%;
+            }
+        }
+    }
+    @media screen and (max-width: 400px) {
+        .content{
+            &__head{
+                top: -50%;
+            }
+            &__head-moto{
+                min-width: 400px;
+            }
+            &__body{
+                 padding: 65px 10px 10px 10px;
             }
         }
     }

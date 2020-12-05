@@ -97,4 +97,63 @@ import BurgerMenu from '@/components/BurgerMenu.vue';
             }
         }
     }
+/***ADAPTIVE***/
+    @media screen and (max-width: 960px) {
+        .header{
+            &__logo{
+                & svg:first-child{
+                    height: 80px;
+                }
+            }
+            &__navigation-list{
+                & li{
+                    & a {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }	
+    @media screen and (max-width: 768px) {
+        .header{
+            &__navigation-list{
+                flex-direction: column;
+                align-items: flex-end;
+                & li{
+                    &:first-child{
+                        &::after{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 450px) {
+        .header{
+            &__logo{
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%);
+            }  
+            &__logo{
+                & svg{
+                    &:last-child{
+                        width: 200px;
+                    }
+                }
+            } 
+        }
+    }
+    @media screen and (max-width: 375px) {
+        .header{
+            &__navigation-list{
+                & li{
+                    & a {
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
 </style>

@@ -127,8 +127,11 @@ export default {
     align-items: center;
     width: 100%;
     height: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
     & li {
       list-style: none;
+      padding-left: 20px;
       & a {
         & svg {
           width: 50px;
@@ -141,5 +144,21 @@ export default {
 .showMenu {
   transform: translateY(0px);
   transition: all 0.5s ease;
+}
+
+/***ADAPTIVE***/
+@media screen and (max-width: 375px) {
+  .menu{
+    & ul{
+      & li{
+        & a {
+          & svg {
+            height: 40px;
+            width: 40px;
+          }
+        }
+      }
+    }
+  }        
 }
 </style>
