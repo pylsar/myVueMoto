@@ -136,6 +136,9 @@ export default {
         & svg {
           width: 50px;
           height: 50px;
+          &:hover{
+            transform: scale(1.1);
+          }
         }
       }
     }
