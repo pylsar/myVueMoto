@@ -13,28 +13,28 @@
       <ul>
         <li>
           <a href="https://www.codewars.com/users/pylsar" rel="nofollow" target="_blank">
-            <svg class="social-link">
+            <svg class="social-link social-link__one">
               <use xlink:href="../assets/img/sprite.svg#iconfinder_codewars_4691329"></use>
             </svg>
           </a>
         </li>
         <li>
           <a href="https://codepen.io/collection/Aawzba" rel="nofollow" target="_blank">
-            <svg class="social-link">
+            <svg class="social-link social-link__two">
               <use xlink:href="../assets/img/sprite.svg#iconfinder_Codepen_4550862"></use>
             </svg>
           </a>
         </li>
         <li>
           <a href="https://codesandbox.io/u/pylsar" rel="nofollow" target="_blank">
-            <svg class="social-link">
+            <svg class="social-link social-link__three">
               <use xlink:href="../assets/img/sprite.svg#iconfinder_codesandbox_4691539"></use>
             </svg>
           </a>
         </li>
         <li>
           <a href="https://github.com/pylsar" rel="nofollow" target="_blank">
-            <svg class="social-link">
+            <svg class="social-link social-link__four">
               <use xlink:href="../assets/img/sprite.svg#github"></use>
             </svg>
           </a>
@@ -56,8 +56,11 @@ export default {
     closeBurger() {
       this.burger = !this.burger;
         let tl = new TimelineMax();
-        tl.fromTo(".social-link", 4, { opacity: 0 }, { opacity: 1 })
-        // tl.staggerFromTo('.social-link', 0.3, {y: 40, opacity: 0}, {y: 0, opacity: 1}, 0.05)
+        tl
+          .fromTo(".social-link__one", .3, { opacity: 0 }, { opacity: 1 })
+          .fromTo(".social-link__two", .3, { opacity: 0 }, { opacity: 1 })
+          .fromTo(".social-link__three", .3, { opacity: 0 }, { opacity: 1 })
+          .fromTo(".social-link__four", .3, { opacity: 0 }, { opacity: 1 })
     },
   },
   mounted() {
@@ -111,7 +114,7 @@ export default {
 .menu {
   width: 100%;
   height: 20vh;
-  background: green;
+  background: #5a5543;
   position: absolute;
   top: 0;
   left: 0;

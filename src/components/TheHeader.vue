@@ -25,7 +25,7 @@
         </div>
         <nav class="header__navigation">
             <ul class="header__navigation-list">
-                <li><a href="#">INTERNATIONAL WEBSITE</a></li>
+                <li><a href="#">NOT MY DESIGN</a></li>
                 <li><a href="https://github.com/pylsar/myVueMoto" rel="nofollow" target="_blank">CODE HERE</a></li>
             </ul>
         </nav>
